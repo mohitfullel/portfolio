@@ -1,0 +1,48 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a67c00 0%, #d4a017 50%, #f9d423 100%);
+    font-family: 'Arial Black', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.skills-container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.left-title {
+    flex: 1;
+}
+
+.right-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-in {
+    opacity: 0; 
+    animation: fadeInUp 0.8s ease-out forwards;
+}

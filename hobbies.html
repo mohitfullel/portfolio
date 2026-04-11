@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Hobbies</title>
+    <link rel="stylesheet" href="hobbies.css">
+
+    <style>
+        .title {
+            font-size: 60px;
+            font-weight: 900;
+            margin-top: 40px;
+            text-transform: uppercase;
+        }
+
+        .label {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #90ee90; 
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: lowercase;
+            pointer-events: none; 
+        }
+
+        .hobby-card:hover img {
+            transform: scale(1.1);
+            transition: 0.3s;
+            filter: brightness(0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="title">My Hobbies</h1>
+
+    <div class="hobbies-grid">
+        <a href="drawings.html" class="hobby-card">
+            <img src="images/megumi.png" alt="Drawing">
+            <div class="label">drawing</div>
+        </a>
+
+        <div class="hobby-card">
+            <img src="images/minecraft.png" alt="Minecraft">
+            <div class="label">minecraft</div>
+        </div>
+
+        <div class="hobby-card">
+            <img src="images/music.png" alt="Music">
+            <div class="label">music</div>
+        </div>
+
+        <div class="hobby-card">
+            <img src="images/ccandam.jpg" alt="Editing">
+            <div class="label" style="font-size: 18px;">editing videos</div>
+        </div>
+
+        <div class="hobby-card">
+            <img src="images/Screenshot 2026-04-08 160840.png" alt="Web Design">
+            <div class="label">web designing</div>
+        </div>
+
+        <div class="hobby-card">
+            <img src="images/Screenshot 2026-04-08 161227.png" alt="Anime">
+            <div class="label">anime</div>
+        </div>
+    </div>
+
+    <a href="index.html" style="margin-top: 40px; color: black; font-weight: bold; text-decoration: none;">
+        BACK TO HOME
+    </a>
+    
+
+</body>
+</html>

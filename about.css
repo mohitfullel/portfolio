@@ -1,0 +1,57 @@
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-in {
+    opacity: 0; 
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #d4a017;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.main-container {
+    display: flex;
+    max-width: 1000px;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+.navbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+    background-color: #000;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-family: Arial;
+}

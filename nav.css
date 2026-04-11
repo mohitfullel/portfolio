@@ -1,0 +1,38 @@
+
+.navbar {
+    background-color: #000;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
+    
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+.navbar a {
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase; 
+    transition: 0.3s;
+}
+
+.navbar a:link {
+    color: white;
+}
+
+.navbar a:visited {
+    color: white;
+}
+
+.navbar a:hover {
+    color: #d4a017; 
+}

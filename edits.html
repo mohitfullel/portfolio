@@ -1,58 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Editing Portfolio | Mohit Fullel</title>
+    <link rel="stylesheet" href="nav.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #d4a017;
+            font-family: Arial, sans-serif;
+        }
+
+       
+        .page-title {
+            font-size: 50px;
+            font-family: "Arial Black", sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            text-transform: uppercase;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            background: #000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .footer-link {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer-link a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            border-bottom: 2px solid black;
+        }
+    </style>
 </head>
-<body bgcolor="#d4a017">
+<body>
 
-    <br><br>
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="skills.html" style="color: #d4a017;">SKILLS</a>
+        <a href="hobbies.html">HOBBIES</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
 
-    <center>
-        <font size="7" face="Arial Black" color="black">
-            MY EDITS
-        </font>
-        <br><br>
+    <h1 class="page-title">MY EDITS</h1>
 
-        <nobr>
-            <video width="300" height="250" controls poster="thumb1.jpg">
-                <source src="videos/leviedit.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
-            <video width="300" height="250" controls poster="thumb2.jpg">
-                <source src="videos/choso.mp4" type="video/mp4">
-            </video>
+    <div class="video-grid">
+        <video controls poster="thumb1.jpg">
+            <source src="videos/leviedit.mp4" type="video/mp4">
+        </video>
+        
+        <video controls poster="thumb2.jpg">
+            <source src="videos/choso.mp4" type="video/mp4">
+        </video>
 
-            <video width="300" height="250" controls align="top" poster="main_thumb.jpg">
-                <source src="videos/levi2.mp4" type="video/mp4">
-            </video>
-        </nobr>
+        <video controls poster="main_thumb.jpg">
+            <source src="videos/levi2.mp4" type="video/mp4">
+        </video>
 
+        <video controls poster="thumb3.jpg">
+            <source src="videos/deathnote.mp4" type="video/mp4">
+        </video>
+        
+        <video controls poster="thumb4.jpg">
+            <source src="videos/danceforme.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="footer-link">
+        <hr style="width: 50%; border: 1px solid black;">
         <br>
+        <a href="skills.html">BACK TO SKILLS</a>
+    </div>
 
-        <nobr>
-            <video width="300" height="250" controls poster="thumb3.jpg">
-                <source src="videos/deathnote.mp4" type="video/mp4">
-            </video>
-            
-            <video width="300" height="250" controls poster="thumb4.jpg">
-                <source src="videos/danceforme.mp4" type="video/mp4">
-            </video>
-
-            <img src="blank.png" width="300" height="0" border="0">
-        </nobr>
-
-    </center>
-
-    <br><br>
-
-    <center>
-        <hr width="500">
-        <br>
-        <a href="skills.html">
-            <font size="5" face="Arial" color="black"><b>BACK TO SKILLS</b></font>
-        </a>
-    </center>
-
-</body>
+</body> 
 </html>

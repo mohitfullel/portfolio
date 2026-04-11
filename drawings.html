@@ -1,40 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Drawing Gallery | Pure HTML</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Gallery | Mohit Fullel</title>
+    <link rel="stylesheet" href="nav.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #d4a017;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-family: "Arial Black", sans-serif;
+            font-size: 50px;
+            margin-top: 80px; /* Space for the navbar */
+            text-transform: uppercase;
+        }
+
+        .image-grid {
+            display: grid;
+            /* This line automatically decides how many columns fit */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .image-grid img {
+            width: 100%; /* Makes image fill its grid square */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            display: block;
+        }
+
+        .back-link {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            border-bottom: 2px solid black;
+        }
+    </style>
 </head>
-<body bgcolor="#d4a017">
+<body>
 
-    <br><br>
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="skills.html" style="color: #d4a017;">SKILLS</a>
+        <a href="hobbies.html">HOBBIES</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
 
-    <center>
-        <nobr>
-            <img src="images/utahime.png" width="350"   alt="momo">
-            
-            <img src="images/doodle.png" width="280" alt="Doodle">
+    <h1 class="gallery-title">Drawings</h1>
 
-            <img src="images/megumi.png" width="320"  align="top" alt="megumi">
-        </nobr>
+    <div class="image-grid">
+        <img src="images/utahime.png" alt="utahime">
+        <img src="images/doodle.png" alt="Doodle">
+        <img src="images/megumi.png" alt="megumi">
+        <img src="images/Screenshot 2026-04-07 134159.png" alt="nobara">
+        <img src="images/gojo.png" alt="gojo">
+        <img src="images/yuta.png" alt="yuta">
+    </div>
 
-        <br>
-
-        <nobr>
-            <img src="images/Screenshot 2026-04-07 134159.png" width="300"  alt="nobara">
-            
-            <img src="images/gojo.png" width="300"  alt="gojo">
-
-            <img src="images/yuta.png" width="340" >
-        </nobr>
-
-    </center>
-
-    <br><br>
-
-    <center>
-        <a href="skills.html">
-            <font size="5" color="black"><b>BACK TO SKILLS</b></font>
-        </a>
-    </center>
+    <div class="back-link">
+        <a href="skills.html">BACK TO SKILLS</a>
+    </div>
 
 </body>
+<style>
+    .navbar {
+    background-color: #000;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed; /* Keeps it at the top even when you scroll */
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Ensures it stays ABOVE everything else */
+}
+
+.navbar a {
+    color: white !important; /* Forces links to stay white, not purple */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.navbar a:hover {
+    color: #d4a017 !important; /* Turns gold when you hover */
+}
+</style>
 </html>

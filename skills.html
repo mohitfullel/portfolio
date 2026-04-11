@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>My Skills | Mohit Fullel</title>
     <link rel="stylesheet" href="skills.css">
+    <link rel="stylesheet" href="nav.css">
     
     <style>
         .big-text {
@@ -25,7 +28,7 @@
             display: block;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
+            margin-bottom: 15px; 
 
         .skill-btn:hover {
             transform: scale(1.05);
@@ -46,12 +49,8 @@
             padding: 10px 20px;
             border-bottom: 2px solid #2ecc71;
             transition: all 0.3s ease;
-        }
-
-        .home-link:hover {
-            color: #2ecc71;
-            background: rgba(46, 204, 113, 0.1);
-            border-radius: 5px;
+            background: white;
+            z-index: 10;
         }
 
         .fade-slide {
@@ -63,9 +62,38 @@
             from { opacity: 0; transform: translateX(50px); }
             to { opacity: 1; transform: translateX(0); }
         }
+
+       
+        @media screen and (max-width: 600px) {
+            .skills-container {
+                display: block; 
+                padding: 80px 20px 20px 20px;
+                text-align: center;
+            }
+            .big-text {
+                font-size: 60px; 
+                margin-bottom: 30px;
+            }
+            .skill-btn {
+                font-size: 28px; 
+                padding: 15px 20px;
+            }
+            .home-link {
+                right: 10px;
+                bottom: 10px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
-<body>
+<body style="margin:0;">
+
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="skills.html" style="color: #d4a017;">SKILLS</a>
+        <a href="hobbies.html">HOBBIES</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
 
     <div class="skills-container">
         <div class="left-title">

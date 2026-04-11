@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Mohit Fullel | Portfolio</title>
+    
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="nav.css">
+
     <style>
         .name-header {
             font-size: 75px;
@@ -33,11 +38,37 @@
             transition: transform 0.2s;
         }
         .social-icons img:hover { transform: scale(1.2); }
+
+        /* MOBILE FIXES */
+        @media screen and (max-width: 600px) {
+            .name-header {
+                font-size: 50px; /* Smaller text so it fits on phone */
+            }
+            .main-container {
+                display: block; /* Stacks the name on top of the photo */
+                padding-top: 80px; /* Space for the navbar */
+            }
+            .left-content, .right-content {
+                width: 100%;
+                text-align: center;
+            }
+            .gray-frame {
+                margin: 20px auto;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
 
-    <div class="main-container">
+    <div class="navbar">
+        <a href="index.html" style="color: #d4a017;">HOME</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="hobbies.html">HOBBIES</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="main-container" style="padding-top: 70px;">
         
         <div class="left-content fade-in">
             <h3 style="margin: 0; font-size: 30px;">Hi everyone, my name is</h3>
@@ -49,7 +80,7 @@
 
         <div class="right-content fade-in" style="animation-delay: 0.3s;">
             <div class="gray-frame">
-                <img src="images/mohitinsta.jpg" alt="Mohit" style="width: 100%; max-width: 320px; border-radius: 20px; display: block;">
+                <img src="images/mohitinsta.jpg" alt="Mohit" style="width: 100%; max-width: 320px; border-radius: 20px; display: block; margin: 0 auto;">
             </div>
 
             <div class="social-pill">
@@ -62,17 +93,6 @@
             </div>
         </div>
 
-    </div>
-    
-
-</body>
-<body style="margin: 0; padding: 0;">
-
-    <div class="navbar">
-        <a href="about.html">HOME</a>
-        <a href="skills.html">SKILLS</a>
-        <a href="hobbies.html">HOBBIES</a>
-        <a href="contact.html">CONTACT</a>
     </div>
 
 </body>

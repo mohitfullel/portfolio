@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow-x: hidden; 
 }
 
 .skills-container {
@@ -30,6 +31,7 @@ body {
     gap: 25px;
 }
 
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -41,8 +43,27 @@ body {
     }
 }
 
-
 .fade-in {
     opacity: 0; 
     animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        display: block; 
+        min-height: auto;
+    }
+
+    .skills-container {
+       
+        flex-direction: column; 
+        width: 100%;
+        padding: 100px 20px 40px 20px; 
+        gap: 30px;
+        text-align: center;
+    }
+
+    .left-title, .right-buttons {
+        width: 100%;
+    }
 }

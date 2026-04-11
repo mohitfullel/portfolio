@@ -1,39 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contact Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Mohit Fullel</title>
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="nav.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #d4a017;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .contact-title {
+            margin-top: 100px; /* Space for Navbar */
+            font-size: 40px;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            margin: 30px auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-align: left; /* Keeps labels aligned left inside the centered box */
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box; /* Crucial for mobile sizing */
+        }
+
+        .my-button {
+            background-color: #000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .my-button:hover {
+            background-color: #333;
+        }
+
+        .social-links a {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* MOBILE FIX */
+        @media screen and (max-width: 480px) {
+            .contact-title {
+                font-size: 30px;
+            }
+            .form-box {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <br>
-    <h1 style="color: black; text-decoration: underline;">Contact Me</h1>
+    <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="hobbies.html">HOBBIES</a>
+        <a href="contact.html" style="color: #d4a017;">CONTACT</a>
+    </div>
 
-    <div class="form-box" >
-        <form>
-            <p>Enter your details:</p>
+    <h1 class="contact-title">Contact Me</h1>
+
+    <div class="form-box">
+        <form action="https://formspree.io/f/your-id" method="POST"> <p style="font-weight: bold; margin-bottom: 20px;">Enter your details:</p>
             
-            Name: <br>
-            <input type="text" name="name"> <br>
+            <label>Name:</label>
+            <input type="text" name="name" placeholder="Your Name" required>
             
-            Email: <br>
-            <input type="email" name="email"> <br>
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="Email@example.com" required>
             
-            Message: <br>
-            <textarea name="msg" rows="4"></textarea> <br>
+            <label>Message:</label>
+            <textarea name="msg" rows="4" placeholder="How can I help?"></textarea>
             
             <input type="submit" value="Submit Form" class="my-button">
         </form>
     </div>
 
-    <br>
     <p>Find me on:</p>
-    <a href="https://facebook.com//MO HIT">facebook</a> | 
-    <a href="https://instagram.com//mohit_fullel">Instagram</a>
+    <div class="social-links">
+        <a href="https://facebook.com/MO HIT" target="_blank">Facebook</a> | 
+        <a href="https://instagram.com/mohit_fullel" target="_blank">Instagram</a>
+    </div>
 
     <br><br>
-    
-    <a href="index.html" style="font-size: 14px; color: blue;">Back to Home Page</a>
+    <a href="index.html" style="font-size: 14px; color: black; font-weight: bold;">Back to Home Page</a>
 
 </body>
 </html>

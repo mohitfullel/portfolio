@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -8,15 +7,18 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+
+    overflow-x: hidden; 
 }
 
 .hobbies-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     width: 90%;
     max-width: 1000px;
     margin-top: 20px;
+    margin-bottom: 40px; 
 }
 
 .hobby-card {
@@ -44,25 +46,22 @@ body {
     }
 }
 
-
 .fade-in {
     opacity: 0; 
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px); 
+
+@media screen and (max-width: 600px) {
+    .hobbies-grid {
+       
+        grid-template-columns: 1fr;
+        width: 95%;
+        gap: 15px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .hobby-card {
+        border-width: 5px; 
     }
 }
 
-
-.fade-in {
-    opacity: 0; 
-    animation: fadeInUp 0.8s ease-out forwards;
-}

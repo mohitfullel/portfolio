@@ -67,3 +67,12 @@ body {
         width: 100%;
     }
 }
+.home-link {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Perfectly centers it */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

@@ -98,3 +98,29 @@ body {
         opacity: 0.8;
     }
 }
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    background-color: #d4af37; 
+    align-items: center;
+}
+
+
+.skills-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.home-link {
+    margin-bottom: 20px; 
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}

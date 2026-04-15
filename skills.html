@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>My Skills | Mohit Fullel</title>
     <link rel="stylesheet" href="skills.css">
     <link rel="stylesheet" href="nav.css">
-    
+ 
     <style>
         .big-text {
             font-size: 100px;
@@ -16,10 +15,10 @@
             text-transform: uppercase;
             margin: 0;
         }
-
+ 
         .skill-btn {
             background-color: #ffffff;
-            color: #2ecc71; 
+            color: #2ecc71;
             text-decoration: none;
             font-size: 40px;
             padding: 20px 40px;
@@ -28,90 +27,50 @@
             display: block;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            margin-bottom: 15px; 
-
+            box-sizing: border-box;
+        }
+ 
         .skill-btn:hover {
             transform: scale(1.05);
             background-color: #f0f0f0;
             box-shadow: 0 15px 25px rgba(0,0,0,0.2);
         }
-
-        .home-link {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: bold;
-            font-family: sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 10px 20px;
-            border-bottom: 2px solid #2ecc71;
-            transition: all 0.3s ease;
-            background: white;
-            z-index: 10;
-        }
-
-        .fade-slide {
-            opacity: 0;
-            animation: slideIn 0.6s ease-out forwards;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-       
+ 
         @media screen and (max-width: 600px) {
-            .skills-container {
-                display: block; 
-                padding: 80px 20px 20px 20px;
-                text-align: center;
-            }
             .big-text {
-                font-size: 60px; 
-                margin-bottom: 30px;
+                font-size: 60px;
+                margin-bottom: 20px;
+                letter-spacing: -2px;
             }
             .skill-btn {
-                font-size: 28px; 
+                font-size: 28px;
                 padding: 15px 20px;
-            }
-            .home-link {
-                right: 10px;
-                bottom: 10px;
-                font-size: 12px;
             }
         }
     </style>
 </head>
-<body style="margin:0;">
-
+<body>
+ 
     <div class="navbar">
         <a href="index.html">HOME</a>
         <a href="skills.html" style="color: #d4a017;">SKILLS</a>
         <a href="hobbies.html">HOBBIES</a>
         <a href="contact.html">CONTACT</a>
     </div>
-
+ 
     <div class="skills-container">
         <div class="left-title">
-            <h1 class="big-text" style="letter-spacing: -5px;">MY<br>SKILLS</h1> 
+            <h1 class="big-text" style="letter-spacing: -5px;">MY<br>SKILLS</h1>
         </div>
-
+ 
         <div class="right-buttons">
             <a href="drawings.html" class="skill-btn fade-slide" style="animation-delay: 0.1s;">DRAWING</a>
-            
-            <a href="edits.html" class="skill-btn fade-slide" style="animation-delay: 0.2s; font-size: 32px;">
-               edits
-            </a>
-            
+            <a href="edits.html" class="skill-btn fade-slide" style="animation-delay: 0.2s; font-size: 32px;">edits</a>
             <a href="index.html" class="skill-btn fade-slide" style="animation-delay: 0.3s;">html and css</a>
         </div>
     </div>
-
+ 
     <a href="index.html" class="home-link">Back to Home</a>
-
+ 
 </body>
 </html>

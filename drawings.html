@@ -18,13 +18,13 @@
             text-align: center;
             font-family: "Arial Black", sans-serif;
             font-size: 50px;
-            margin-top: 80px; /* Space for the navbar */
+            margin-top: 80px; 
             text-transform: uppercase;
         }
 
         .image-grid {
             display: grid;
-            /* This line automatically decides how many columns fit */
+          
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             width: 90%;
@@ -33,7 +33,7 @@
         }
 
         .image-grid img {
-            width: 100%; /* Makes image fill its grid square */
+            width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
@@ -72,6 +72,8 @@
         <img src="images/Screenshot 2026-04-07 134159.png" alt="nobara">
         <img src="images/gojo.png" alt="gojo">
         <img src="images/yuta.png" alt="yuta">
+        <img src="images/doggu don.jpeg" alt="doggu">
+        <img src="images/dana dey rey.jpeg" alt="lana">
     </div>
 
     <div class="back-link">
@@ -85,14 +87,13 @@
     width: 100%;
     padding: 15px 0;
     text-align: center;
-    position: fixed; /* Keeps it at the top even when you scroll */
+    position: fixed; 
     top: 0;
     left: 0;
-    z-index: 9999; /* Ensures it stays ABOVE everything else */
-}
+    z-index: 9999; 
 
 .navbar a {
-    color: white !important; /* Forces links to stay white, not purple */
+    color: white !important;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -102,7 +103,7 @@
 }
 
 .navbar a:hover {
-    color: #d4a017 !important; /* Turns gold when you hover */
+    color: #d4a017 !important;
 }
 </style>
 </html>

@@ -47,17 +47,22 @@ html {
   cursor: url('Screenshot_2026-04-16_191647-removebg-preview.png') 0 0, auto;
 }
 /* AI Chat Container Styling */
+/* Base styling for desktop */
 .ai-chat-container {
-    margin-top: 25px;
-    max-width: 450px;
-    width: 100%;
+    position: absolute;
+    left: 8%;             /* Aligns with your left-aligned headers */
+    top: 480px;           /* Drops cleanly below your text intro */
+    max-width: 440px;      
+    width: 35%;           /* Scales smoothly on desktop layouts */
     background: #222222;
     border: 3px solid #000000;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
     font-family: inherit;
     color: #ffffff;
+    z-index: 10;           
+    box-sizing: border-box; /* Crucial padding protection */
 }
 
 .chat-header {
@@ -85,6 +90,7 @@ html {
     max-width: 85%;
     font-size: 0.9rem;
     line-height: 1.4;
+    box-sizing: border-box;
 }
 
 .ai-msg {
@@ -120,6 +126,8 @@ html {
     color: #000000;
     outline: none;
     font-size: 0.9rem;
+    width: 100%; /* Fixes inputs breaking boxes on mobile */
+    box-sizing: border-box;
 }
 
 .chat-input-area button {
@@ -137,31 +145,23 @@ html {
     background: #ffcc00;
     color: #000000;
 }
-.ai-chat-container {
-    /* 1. Force the container to handle free positioning */
-    position: absolute;
-    
-    /* 2. Position it perfectly inside your designated circle zone */
-    left: 8%;              /* Aligns it directly with your left-aligned headers */
-    top: 480px;            /* Drops it cleanly below your short intro text paragraph */
-    
-    /* 3. Aesthetic constraints */
-    max-width: 440px;      /* Stops it from hitting the social card */
-    width: 35%;            /* Scales smoothly on desktop layouts */
-    background: #222222;
-    border: 3px solid #000000;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    font-family: inherit;
-    color: #ffffff;
-    z-index: 10;           /* Prevents layout overlaps */
-}
 
 /* Responsive adjustment for small laptop screens */
 @media (max-width: 1200px) {
     .ai-chat-container {
         top: 520px;
         width: 40%;
+    }
+}
+
+/* THE MOBILE FIX: Triggers on screens smaller than 768px (Phones/Tablets) */
+@media (max-width: 768px) {
+    .ai-chat-container {
+        position: relative; /* Removes absolute floating completely */
+        left: 0;            /* Resets alignment to center/flow naturally */
+        top: 0;             /* Drops it right into the regular page order */
+        width: 90%;         /* Makes it fill the mobile screen width nicely */
+        max-width: 400px;   /* Keeps it looking tidy */
+        margin: 30px auto;  /* Centers it perfectly horizontally with clean margins */
     }
 }

@@ -15,8 +15,8 @@ export default async function handler(req, res) {
     const systemInstructionText = "You are the personal AI assistant for Mohit Fullel's portfolio website. Mohit is a creative student who loves drawing and video editing. Keep responses short (1-2 sentences), casual, friendly, and use casual slang like 'yo' or 'bro'.";
 
     try {
-        // Updated to the standard stable model endpoint structure
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        // CHANGED HERE: Updated model version to gemini-2.5-flash for 2026 compatibility
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json'
@@ -25,7 +25,6 @@ export default async function handler(req, res) {
                 contents: [{ 
                     parts: [{ text: prompt }] 
                 }],
-                // Fixed the exact structural naming layout Google's REST endpoint expects
                 systemInstruction: { 
                     parts: [{ text: systemInstructionText }] 
                 }

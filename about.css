@@ -1,6 +1,4 @@
-
-@keyframes
- fadeInUp {
+@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px); 
@@ -16,44 +14,44 @@
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-
 body {
     margin: 0;
-    padding: 0;
-  
-    
+    padding: 40px 0; /* Gives top and bottom breathing room when scrolling */
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stacks layout elements vertically */
+    justify-content: flex-start; /* Allows natural scrolling downwards */
     align-items: center;
     min-height: 100vh;
     overflow-x: hidden; 
     background: radial-gradient(circle, #ffc400 40%, #000000 110%);
+    box-sizing: border-box;
 }
 
+/* This is your central structural wrapper */
 .main-container {
     display: flex;
-    max-width: 1000px;
-    width: 90%;
+    flex-direction: column; /* Forces everything (Intro, Socials, Chat) to stack chronologically */
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    max-width: 600px; /* Snaps the content column to a clean, readable text width */
+    width: 90%;
+    gap: 30px; /* Gives nice, even spacing between your text blocks and the chatbox */
 }
+
 html {
-    /* The 'auto' at the end is a backup in case the image fails to load */
     cursor: url('Screenshot_2026-04-16_191647-removebg-preview.png'), auto;
 }
+
 * {
-  cursor: url('Screenshot_2026-04-16_191647-removebg-preview.png') 0 0, auto;
+    cursor: url('Screenshot_2026-04-16_191647-removebg-preview.png') 0 0, auto;
 }
-/* AI Chat Container Styling */
-/* Base styling for desktop */
+
+/* AI Chat Container Styling - FIXED FOR CLEAN FLOW */
 .ai-chat-container {
-    position: absolute;
-    left: 8%;             /* Aligns with your left-aligned headers */
-    top: 480px;           /* Drops cleanly below your text intro */
-    max-width: 440px;      
-    width: 35%;           /* Scales smoothly on desktop layouts */
+    position: relative; /* CHANGED: No longer floats chaotically over other text elements */
+    width: 100%;        /* Allows container to cleanly adapt to the main container column width */
+    max-width: 450px;   /* Keeps the chat box size locked into an aesthetic desktop dimension */
+    margin: 10px auto;  /* Evenly balances placement */
     background: #222222;
     border: 3px solid #000000;
     border-radius: 16px;
@@ -62,7 +60,7 @@ html {
     font-family: inherit;
     color: #ffffff;
     z-index: 10;           
-    box-sizing: border-box; /* Crucial padding protection */
+    box-sizing: border-box; 
 }
 
 .chat-header {
@@ -101,7 +99,7 @@ html {
 }
 
 .user-msg {
-    background: #ffcc00; /* Yellow bubble for user */
+    background: #ffcc00; 
     color: #000000;
     align-self: flex-end;
     border-bottom-right-radius: 2px;
@@ -126,7 +124,7 @@ html {
     color: #000000;
     outline: none;
     font-size: 0.9rem;
-    width: 100%; /* Fixes inputs breaking boxes on mobile */
+    width: 100%; 
     box-sizing: border-box;
 }
 
@@ -146,22 +144,11 @@ html {
     color: #000000;
 }
 
-/* Responsive adjustment for small laptop screens */
-@media (max-width: 1200px) {
-    .ai-chat-container {
-        top: 520px;
-        width: 40%;
-    }
-}
-
-/* THE MOBILE FIX: Triggers on screens smaller than 768px (Phones/Tablets) */
+/* CLEAN MOBILE SCALE: Flawless alignment everywhere */
 @media (max-width: 768px) {
     .ai-chat-container {
-        position: relative; /* Removes absolute floating completely */
-        left: 0;            /* Resets alignment to center/flow naturally */
-        top: 0;             /* Drops it right into the regular page order */
-        width: 90%;         /* Makes it fill the mobile screen width nicely */
-        max-width: 400px;   /* Keeps it looking tidy */
-        margin: 30px auto;  /* Centers it perfectly horizontally with clean margins */
+        width: 15% less than full mobile screen; /* Perfect padding safety buffer */
+        max-width: 100%; 
+        margin: 20px auto; 
     }
 }

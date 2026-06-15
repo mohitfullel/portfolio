@@ -104,27 +104,31 @@
     </div>
     <div class="chat-input-area">
         <input type="text" id="user-input" placeholder="Ask me something...">
-        <button onclick="sendMessage()">Send</button>
+        <button id="send-btn">Send</button>
     </div>
 </div>
+
 <script>
 async function sendMessage() {
-    const inputElement = document.getElementById('chat-input');
-    const messageContainer = document.getElementById('chat-messages');
+    const inputElement = document.getElementById('user-input');
+    const messageContainer = document.getElementById('chat-log');
     const message = inputElement.value.trim();
 
     if (!message) return;
 
     // 1. Display your message in the chat box
     const userDiv = document.createElement('div');
-    userDiv.className = 'user-message'; 
+    userDiv.className = 'user-msg'; // Matches your CSS style naming
     userDiv.innerText = `You: ${message}`;
     messageContainer.appendChild(userDiv);
 
     // Clear the input box
     inputElement.value = '';
 
-    // 2. This part triggers the backend chat.js file we just deployed!
+    // Auto-scroll so you see your own message
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+
+    // 2. This part triggers the backend chat.js file we deployed on Vercel!
     try {
         const response = await fetch('/api/chat', {
             method: 'POST',
@@ -136,24 +140,29 @@ async function sendMessage() {
 
         // 3. Display the AI's response
         const aiDiv = document.createElement('div');
-        aiDiv.className = 'ai-message'; 
+        aiDiv.className = 'ai-msg'; 
         aiDiv.innerText = `Assistant: ${data.reply}`;
         messageContainer.appendChild(aiDiv);
 
     } catch (error) {
         const errorDiv = document.createElement('div');
+        errorDiv.className = 'ai-msg';
         errorDiv.innerText = "Assistant: Connection error, try again bro!";
         messageContainer.appendChild(errorDiv);
     }
 
-    // Auto-scroll to the bottom of the chat
+    // Auto-scroll to the bottom for the AI's response
     messageContainer.scrollTop = messageContainer.scrollHeight;
 }
 
-// Hook it up to your existing button click and Enter key
+// Hook it up to the button click properly
 document.getElementById('send-btn').addEventListener('click', sendMessage);
-document.getElementById('chat-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') sendMessage();
+
+// Allow pressing the "Enter" key to send messages too
+document.getElementById('user-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
 });
 </script>
 </body>

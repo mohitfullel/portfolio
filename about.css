@@ -14,28 +14,27 @@
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* RESTORED: Back to your original centering rules for laptop */
 body {
     margin: 0;
-    padding: 40px 0; /* Gives top and bottom breathing room when scrolling */
+    padding: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Stacks layout elements vertically */
-    justify-content: flex-start; /* Allows natural scrolling downwards */
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
     overflow-x: hidden; 
     background: radial-gradient(circle, #ffc400 40%, #000000 110%);
-    box-sizing: border-box;
 }
 
-/* This is your central structural wrapper */
+/* RESTORED: Back to horizontal split layout for laptop */
 .main-container {
     display: flex;
-    flex-direction: column; /* Forces everything (Intro, Socials, Chat) to stack chronologically */
-    align-items: center;
-    max-width: 600px; /* Snaps the content column to a clean, readable text width */
+    max-width: 1000px;
     width: 90%;
-    gap: 30px; /* Gives nice, even spacing between your text blocks and the chatbox */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 html {
@@ -46,12 +45,13 @@ html {
     cursor: url('Screenshot_2026-04-16_191647-removebg-preview.png') 0 0, auto;
 }
 
-/* AI Chat Container Styling - FIXED FOR CLEAN FLOW */
+/* RESTORED: Your original absolute desktop positioning for laptop */
 .ai-chat-container {
-    position: relative; /* CHANGED: No longer floats chaotically over other text elements */
-    width: 100%;        /* Allows container to cleanly adapt to the main container column width */
-    max-width: 450px;   /* Keeps the chat box size locked into an aesthetic desktop dimension */
-    margin: 10px auto;  /* Evenly balances placement */
+    position: absolute;
+    left: 8%;             /* Aligns with your left-aligned headers */
+    top: 480px;           /* Drops cleanly below your text intro */
+    max-width: 440px;      
+    width: 35%;           /* Scales smoothly on desktop layouts */
     background: #222222;
     border: 3px solid #000000;
     border-radius: 16px;
@@ -144,11 +144,32 @@ html {
     color: #000000;
 }
 
-/* CLEAN MOBILE SCALE: Flawless alignment everywhere */
-@media (max-width: 768px) {
+/* Responsive adjustment for small laptop screens */
+@media (max-width: 1200px) {
     .ai-chat-container {
-        width: 15% less than full mobile screen; /* Perfect padding safety buffer */
-        max-width: 100%; 
-        margin: 20px auto; 
+        top: 520px;
+        width: 40%;
+    }
+}
+
+/* THE STRICT MOBILE FIX: ONLY kicks in on phone-sized screens */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 0;
+        justify-content: flex-start; /* Allows vertical page scrolling on phones */
+    }
+    
+    .main-container {
+        flex-direction: column; /* Stacks intro and socials vertically on mobile */
+        gap: 20px;
+    }
+
+    .ai-chat-container {
+        position: relative;    /* Strips absolute pinning ONLY on mobile */
+        left: auto;            /* Resets desktop positioning rules */
+        top: auto;             /* Resets desktop positioning rules */
+        width: 92%;            /* Clean mobile container width */
+        max-width: 420px;      
+        margin: 20px auto 40px auto; /* Forces it right below your socials with perfect spacing */
     }
 }
